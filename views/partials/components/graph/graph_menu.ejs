@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="styles/graph/graph_menu.css">
+
+<% let name = 'graph-menu'; %>
+
+<div id="<%= name %>-div" class="centered-div toolbar-properties">
+    <%- include(`../close`, {
+        id: 'close-' + name,
+        container: name + '-div'
+    }); %>
+    <div id="<%= name %>-heading" class="component-heading">Graph Menu</div>
+    <div class="heading1-underline"></div>
+
+    <div class="content1" id="<%= name %>-content">
+        <% const options = [
+            'insert-graph', 'insert-from-adjacency-matrix', 'insert-from-incidence-matrix',
+            'prufer-decode', 'random-graph', 'analyze'
+        ];
+            options.forEach(option => {
+                let displayName;
+                if (option === 'prufer-decode') {
+                    displayName = 'Prüfer Decode'
+                } else {
+                    displayName = _.startCase(option.replace('-', ' '));
+                }
+        %>
+            <div class="option-div">
+                <span><%= displayName %>&emsp;</span>
+                <span id="<%= option %>"
+                      class="forward-img-container"
+                <% /* ------- add click event listeners for arrows ------- */ %>
+                <% if (option === 'insert-graph') { %>
+                      onclick="listener('#insert-graph-div')"
+                <% } else if (option === 'insert-from-adjacency-matrix') { %>
+                      onclick="listener('#adjacency-matrix')"
+                <% } else if (option === 'insert-from-incidence-matrix') { %>
+                      onclick="listener('#incidence-matrix')"
+                <% } else if (option === 'prufer-decode') { %>
+                      onclick="listener('#prufer-decode-div')"
+                <% } else { %>
+
+                <% } %>>
+                    <img src="/images/forward.png" alt="next image" width="25px" height="25px">
+                </span>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<script>
+    let listener = (selector) => document.querySelector(selector).style.visibility = 'visible';
+</script>

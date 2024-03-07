@@ -1,0 +1,45 @@
+<script type="module" src="/scripts/helpers/graph/incidence_matrix.js" defer></script>
+<link rel="stylesheet" href="styles/graph/matrix.css">
+
+<div id="incidence-matrix" class="centered-div toolbar-properties">
+    <%- include(`../close`, {
+    id: 'close-incidence-matrix',
+    container: 'incidence-matrix'
+    }); %>
+    <div id="incidence-matrix-heading" class="component-heading">Incidence Matrix</div>
+    <div class="heading1-underline"></div>
+
+    <div id="incidence-matrix-grid" class="content1 matrix-grid">
+        <label for="incidence-matrix-size-input-m">|V| ∈ [0, 50]&emsp;|E| ∈ [0, 50]</label>
+        <br><br>
+        <input id="incidence-matrix-size-input-m"
+               name="incidence-matrix-size-input-m"
+               class="matrix-size-input"
+               type="number"
+               min="0"
+               max="50"
+               oninput="validity.valid||(value='');">
+        <input id="incidence-matrix-size-input-n"
+               name="incidence-matrix-size-input-n"
+               class="matrix-size-input"
+               type="number"
+               min="0"
+               max="50"
+               oninput="validity.valid||(value='');">
+        <table id="incidence-matrix-table" class="matrix-table"></table>
+        <br>
+        <div class="buttons">
+            <button type="button" class="properties-button" id="insert-incidence-matrix">Insert</button>
+            <button
+                    type="reset"
+                    class="properties-button"
+                    id="reset-incidence-matrix"
+                    onclick="   // reset inputs in the matrix
+                    document
+                        .querySelectorAll('#incidence-matrix-table input')
+                        .forEach(input => input.value = '');">
+                Reset
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<script type="text/javascript" src="/scripts/helpers/selection.js" defer></script>
+<script type="text/javascript" src="/scripts/helpers/reset.js" defer></script>
+
+<div id="vertex-properties" class="properties">
+
+    <div class="component-heading"><label>Vertex Properties</label><br><br></div>
+    <%- include(`./components/close`, {
+        id: 'close-vertex',
+        container: 'vertex-properties'
+    }); %>
+    <div class="heading1-underline"></div>
+
+    <div class="content1">
+        <form action="/vertex" method="post">
+            <label for="select-vertex-shape">Vertex shape</label><br>
+
+            <select name="select-vertex-shape" id="select-vertex-shape" class="selectors">
+                <option value="Circle" <% if (vertexSVG.shape === 'circle') { %>selected<% } %>>Circle</option>
+                <option value="Square" <% if (vertexSVG.shape === 'square') { %>selected<% } %>>Square</option>
+                <option value="Rectangle" <% if (vertexSVG.shape === 'rectangle') { %>selected<% } %>>Rectangle</option>
+                <option value="Triangle" <% if (vertexSVG.shape === 'triangle') { %>selected<% } %>>Triangle</option>
+                <option value="Polygon" <% if (vertexSVG.shape === 'polygon') { %>selected<% } %>>Polygon</option>
+            </select>
+            <br><div class="height-setter-div"></div>
+            <!---------------------- SLIDERS ---------------------->
+            <%- include(`../partials/components/vertex_sliders/circle`);     %>
+            <%- include(`../partials/components/vertex_sliders/square`);     %>
+            <%- include(`../partials/components/vertex_sliders/rectangle`);  %>
+            <%- include(`../partials/components/vertex_sliders/triangle`);   %>
+            <%- include(`../partials/components/vertex_sliders/polygon`);    %>
+            <!---------------------------------------------------->
+            <div class="color-label-container">
+                <input type="color" id="vertex-fill" value="<%= vertexSVG.fill %>"
+                       class="color-picker" name="vertex-fill"
+                       data-default="<%= vertexProps.fill %>">
+
+                <label for="vertex-fill">&nbsp;&nbsp; Vertex fill</label>
+            </div>
+            <div class="color-label-container">
+                <input type="color" id="vertex-border" value="<%= vertexSVG.stroke %>"
+                       class="color-picker" name="vertex-border"
+                       data-default="<%= vertexProps.stroke %>">
+
+                <label for="vertex-border">&nbsp;&nbsp; Vertex border</label>
+            </div>
+            <div class="height-setter-div"></div>
+            <!---------------------- SLIDER ---------------------->
+            <label for="vertex-border-width">Border width</label><br>
+            <input type="range"
+                   min="1"
+                   max="10"
+                   value="<%= vertexSVG['stroke-width'] %>"
+                   class="slider"
+                   id="vertex-border-width"
+                   name="vertex-border-width"
+                   data-default="<%= vertexProps['stroke-width'] %>">
+
+            <span id="vertex-border-width-val"></span><br><br>
+            <!---------------------------------------------------->
+            <div class="buttons">
+                <button type="button" class="properties-button" id="save-vertex">Save</button>
+                <button type="button" class="properties-button" id="reset-vertex">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

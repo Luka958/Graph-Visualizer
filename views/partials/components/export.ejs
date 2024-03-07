@@ -1,0 +1,24 @@
+<% const name = 'export'; %>
+<div id="<%= name %>-div" class="centered-div toolbar-properties">
+    <%- include(`./close`, {
+    id: 'close-' + name,
+    container: name + '-div'
+    }); %>
+    <div id="<%= name %>-heading" class="component-heading">Export Graph</div>
+    <div class="heading1-underline"></div>
+
+    <div class="content1">
+        <div class="grid-export">
+            <label id="export-label-1" for="export-file-name">Export graph as:</label>
+            <input type="text" id="export-file-name" class="borderless-input" name="export-file-name">
+            <label id="export-label-2">Note: Don't add any file extensions!</label>
+        </div>
+
+        <div class="buttons">
+            <button type="button" class="properties-button" id="confirm-export-button">
+                <a id="export-link" class="non-decorated-link">Confirm</a>
+            </button>
+            <button type="button" class="properties-button" id="cancel-export-button">Cancel</button>
+        </div>
+    </div>
+</div>

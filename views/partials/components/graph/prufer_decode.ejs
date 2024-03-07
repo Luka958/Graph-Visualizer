@@ -1,0 +1,31 @@
+<script type="module" src="/scripts/helpers/graph/prufer_decode.js" defer></script>
+
+<% const name = 'prufer-decode' %>
+<div id="<%= name %>-div" class="centered-div toolbar-properties">
+    <%- include(`../close`, {
+    id: 'close-' + name,
+    container: name + '-div'
+    }); %>
+    <div id="<%= name %>-heading" class="component-heading">Prüfer Decode</div>
+    <div class="heading1-underline"></div>
+
+    <div class="content1">
+        <div style="display: flex; white-space: nowrap">
+            <label for="prufer-code-input">Prüfer's code:&nbsp;</label>
+
+            <div class="vertical-flex">
+                <span class="horizontal-flex-centered">
+                    <input id="<%= name %>-input"
+                           class="borderless-input standard-input-height"
+                           name="<%= name %>-input"
+                           type="text"
+                    >&nbsp;
+                    <span id="<%= name %>-arrow" class="forward-img-container">
+                        <img src="/images/forward.png" alt="next image" width="25px" height="25px">
+                    </span>
+                </span>
+                <div class="note-font-size">Note: Use a comma a separator!</div>
+            </div>
+        </div>
+    </div>
+</div>

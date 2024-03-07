@@ -1,0 +1,12 @@
+<div id="hidden-slider-square" class="hidden-slider" <% if (vertexSVG.shape !== 'square') { %>hidden<% } %>>
+    <label for="square-base">Square base</label><br>
+    <input type="range"
+           min="5"
+           max="50"
+           value="<%= vertexSVG.shape === 'square' ? vertexSVG.width : vertexProps.square.base %>"
+           class="slider"
+           id="square-base"
+           name="square-base"
+           data-default="<%= vertexProps.square.base %>">
+    <span id="square-base-val" class="hidden-slider-val"></span><br><div class="height-setter-div"></div>
+</div>

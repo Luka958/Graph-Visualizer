@@ -1,0 +1,10 @@
+<% const name = 'results'; %>
+<div id="results-div" class="centered-div toolbar-properties" style="min-width: 18em">
+    <%- include(`./close`, {
+    id: 'close-' + name,
+    container: name + '-div'
+    }); %>
+    <div id="<%= name %>-heading" class="component-heading"></div>
+    <div class="heading1-underline"></div>
+    <div class="content1" id="<%= name %>-content"></div>
+</div>

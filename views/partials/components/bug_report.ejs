@@ -1,0 +1,27 @@
+<script type="text/javascript" src="/scripts/helpers/bug_report.js" defer></script>
+
+<div id="bug-report-div" class="centered-div toolbar-properties">
+    <div id="import-heading" class="component-heading">Bug Report</div>
+    <div class="heading1-underline"></div>
+
+    <div class="content1">
+        <p id="bug-report-paragraph" class="centered-p-in-window">
+            Please be patient, we will try to resolve<br> your issues as fast as possible.
+        </p>
+        <form action="/bug_report" method="post" enctype="multipart/form-data">
+            <textarea id="bug-report-textarea"
+                      name="bug-report-text"
+                      placeholder="Write your report..."
+                      maxlength="500">
+            </textarea>
+        </form>
+        <br>
+        <div class="buttons">
+            <button type="button" class="properties-button" id="submit-bug-report-button">Submit</button>
+            <button type="button" class="properties-button" id="cancel-bug-report-button">Cancel</button>
+        </div>
+    </div>
+    <!--      Server side data passed to frontend      -->
+    <% /** @property {string} imported */ %>
+    <div id="imported" hidden><%= imported %></div>
+</div>

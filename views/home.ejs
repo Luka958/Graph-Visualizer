@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Graph Visualizer</title>
+        <script type="text/javaScript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+        <script type="text/javaScript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+        <script type="text/javaScript" src="scripts/main.js" defer></script>
+        <script type="text/javaScript" src="scripts/global.js" defer></script>
+
+        <!-- Web Components -->
+        <script src="comps/ColorPalette.js" defer></script>
+        <script src="comps/FloatingToolbar.js" defer></script>
+
+        <!-- type="module" because it uses the imports -->
+        <script type="module" src="dist/bundle.js" defer></script>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/properties.css">
+        <link rel="stylesheet" href="styles/tooltip.css">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    </head>
+    <body>
+        <%- include(`loading`); %>
+        <script type="text/javascript" src="/scripts/helpers/loading.js"></script>
+        <%- include(`partials/header`); %>
+
+        <main class="grid-container">
+            <%- include(`partials/toolbar`); %>
+            <svg class="canvas"></svg>
+        </main>
+
+        <%- include(`partials/vertex`); %>
+        <%- include(`partials/edge`); %>
+        <%- include(`partials/algorithm`); %>
+        <%- include(`partials/canvas`); %>
+
+        <%- include(`partials/components/import`); %>
+        <%- include(`partials/components/export`); %>
+        <%- include(`partials/components/screenshot`); %>
+        <%- include(`partials/components/weight`); %>
+        <%- include(`partials/components/show_data`); %>
+        <%- include(`partials/components/graph/graph_menu`); %>
+        <%- include(`partials/components/graph/insert_graph`); %>
+        <%- include(`partials/components/graph/adjacency_matrix`); %>
+        <%- include(`partials/components/graph/incidence_matrix`); %>
+        <%- include(`partials/components/graph/prufer_decode`); %>
+        <%- include(`partials/components/clear_canvas`); %>
+        <%- include(`partials/components/warning2`); %>
+        <%- include(`partials/components/bug_report`); %>
+        <%- include(`partials/components/sketch`); %>
+        <%- include(`partials/components/color`); %>
+        <%- include(`partials/components/shrink`); %>
+        <%- include(`partials/components/results`); %>
+    </body>
+</html>

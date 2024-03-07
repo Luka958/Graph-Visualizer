@@ -1,0 +1,125 @@
+#algorithm-content {
+    max-height: 500px;
+    overflow-y: auto;
+    width: 18em;
+}
+
+.flex-container {
+    position: relative;
+}
+#search-algorithm-input {
+    font-family: EncodeSans-Regular, serif;
+    font-size: 0.9em;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    width: calc(100% - 26px);   /* width of the span */
+    padding-left: 5px;
+}
+#search-algorithm-span {
+    background-color: #fc8955;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top: 5px;
+    width: 26px;
+    height: 26px;
+    text-align:center;
+    right: 0;
+    position: absolute;
+}
+#search-algorithm-span:hover {
+    background-color: #fb5204;
+}
+#search-algorithm-span > img {
+    margin-top: 3px;    /* center image vertically */
+}
+
+.algorithm-selectors {
+    font-family: inherit;
+    height: 60px;
+    width: 100%;
+}
+
+.algorithm-selectors > option:hover {
+    background-color: #fc8955;
+    color: white;
+}
+
+.algorithm-selectors > option:checked {
+    background-color: #fc8955;
+    color: white;
+}
+
+.run-stop-button {
+    font-size: 0.8em;
+    color: white;
+    background-color: #fc8955;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.run-stop-button > img {
+    margin-top: 4px;
+    text-align: center;
+}
+.run-stop-button:hover {
+    background-color: #fb5204;
+}
+
+#selected-algorithms-table {
+    font-size: 0.9em;
+}
+.round-left {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.round-right {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.algorithm-name {
+    padding-right: 10px;
+}
+
+.algorithm-row {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
+}
+
+.algorithm-row span {
+    pointer-events: none;
+}
+
+.algorithm-row td {
+    width: calc((100% - 5em) / 2);
+    cursor: pointer;
+}
+
+.algorithm-row td.first-td {
+    width: 5em;
+    text-align: start;
+}
+
+.dijkstra-table {
+    /*table-layout: fixed;*/
+    border-spacing: 5px;
+    font-size: 0.85em;
+}
+.dijkstra-table * {
+    border-collapse: collapse;
+    border-radius: 5px;
+    background-color: white;
+}
+.dijkstra-first-row {
+    background-color: #fc8955;
+    color: white;
+}
+.dijkstra-first-column {
+    background-color: midnightblue;
+    color: white;
+}
+
+/*#opt {*/
+/*    background-image: url(../images/animated.png);*/
+/*}*/

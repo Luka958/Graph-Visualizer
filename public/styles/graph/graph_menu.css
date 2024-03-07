@@ -1,0 +1,20 @@
+.option-div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+}
+.forward-img-container {
+    background-color: #fc8955;
+    width: 25px;
+    height: 25px;
+    margin-left: auto;
+    border-radius: 5px;
+}
+.forward-img-container:hover {
+    background-color: #fb5204;
+}
+
+#graph-menu-div {
+    white-space: nowrap;
+}

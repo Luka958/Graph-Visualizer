@@ -1,0 +1,19 @@
+<% if (userType === 'registered') { %>
+    <span id="user-img" onclick="location.replace('/account');"><img src="images/user.png" alt="user icon"></span>
+<% } %>
+<span id="logo-img"><img src="images/logo.png" alt="logo icon">
+        <span>Graph Visualizer</span>
+</span>
+
+<header>
+    <span id="vertex" class="hover header-text">Vertex</span>
+    <span id="edge" class="hover header-text">Edge</span>
+    <span id="algorithm" class="hover header-text">Algorithm</span>
+    <span id="canvas" class="hover header-text">Canvas</span>
+    <% /** @property {string} userType - custom HTML attribute data-user-type can be 'registered'
+     (for registered users) or 'facebook' (for users that are logged in with facebook account)*/  %>
+    <span id="logout"
+          onclick="location.replace('/logout');"
+          class="hover header-text"
+          data-user-type="<%= userType %>">Logout</span>
+</header>

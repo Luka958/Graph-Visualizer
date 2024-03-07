@@ -1,0 +1,24 @@
+<div id="hidden-slider-rectangle-1" class="hidden-slider" <% if (vertexSVG.shape !== 'rectangle') { %>hidden<% } %>>
+    <label for="rectangle-width">Rectangle width</label><br>
+    <input type="range"
+           min="5"
+           max="50"
+           value="<%= vertexSVG.shape === 'rectangle' ? vertexSVG.width : vertexProps.rectangle.width %>"
+           class="slider"
+           id="rectangle-width"
+           name="rectangle-width"
+           data-default="<%= vertexProps.rectangle.width %>">
+    <span id="rectangle-width-val" class="hidden-slider-val"></span><br><div class="height-setter-div"></div>
+</div>
+<div id="hidden-slider-rectangle-2" class="hidden-slider" <% if (vertexSVG.shape !== 'rectangle') { %>hidden<% } %>>
+    <label for="rectangle-height">Rectangle height</label><br>
+    <input type="range"
+           min="5"
+           max="50"
+           value="<%= vertexSVG.shape === 'rectangle' ? vertexSVG.height : vertexProps.rectangle.height %>"
+           class="slider"
+           id="rectangle-height"
+           name="rectangle-height"
+           data-default="<%= vertexProps.rectangle.height %>">
+    <span id="rectangle-height-val" class="hidden-slider-val"></span><br><div class="height-setter-div"></div>
+</div>

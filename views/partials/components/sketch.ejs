@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="styles/sketch.css">
+
+<gv-floating-toolbar collapsed="false" id="sketch-toolbar" class="hidden">
+    <div slot="content" class="horizontal-flex" style="column-gap: 0.5em;">
+        <div>
+            <gv-color-palette id="sketch-toolbar-color-palette"></gv-color-palette>
+        </div>
+        <div id="sketch-toolset-0" class="horizontal-flex">
+            <div class="vertical-flex-centered">
+                <div>Thickness</div>
+                <div class="horizontal-flex-centered">
+                    <img class="sketch-tool-img-small" id="sketch-tool-minus"
+                         src="images/sketch/minus.png" alt="minus icon">
+
+                    <span id="thickness-value">5px</span>
+
+                    <img class="sketch-tool-img-small" id="sketch-tool-plus"
+                         src="images/sketch/plus.png" alt="plus icon">
+                </div>
+            </div>
+        </div>
+        <div id="sketch-toolset-1" class="horizontal-flex">
+            <img class="sketch-tool-img" id="sketch-tool-pencil" src="images/sketch/pencil.png" alt="pencil icon">
+            <img class="sketch-tool-img" id="sketch-tool-pen" src="images/sketch/pen.png" alt="pen icon">
+            <img class="sketch-tool-img" id="sketch-tool-brush" src="images/sketch/brush.png" alt="brush icon">
+            <img class="sketch-tool-img" id="sketch-tool-eraser" src="images/sketch/eraser.png" alt="eraser icon">
+        </div>
+        <div id="sketch-toolset-2" class="horizontal-flex">
+            <img class="sketch-tool-img" id="sketch-tool-text" src="images/sketch/text.png" alt="add text icon">
+        </div>
+        <div id="sketch-toolset-3" class="horizontal-flex">
+            <img class="sketch-tool-img" id="sketch-tool-reset" src="images/sketch/reset.png" alt="reset icon">
+        </div>
+        <div id="sketch-toolset-4" class="horizontal-flex">
+            <img class="sketch-tool-img" id="sketch-tool-exit" src="images/sketch/exit.png" alt="exit icon">
+        </div>
+    </div>
+</gv-floating-toolbar>
+
+<% let name = 'sketch-reset'; %>
+
+<div id="<%= name %>-div" class="centered-div toolbar-properties">
+    <%- include(`./close`, {
+    id: 'close-' + name,
+    container: name + '-div'
+    }); %>
+    <div id="<%= name %>-heading" class="component-heading">Graph Menu</div>
+    <div class="heading1-underline"></div>
+
+    <div class="content1 content1-no-wrap" id="<%= name %>-content">
+        <p class="centered-p-in-window">
+            Are you sure that you want to delete<br> everything that you've sketched so far?<br>
+            An operation can't be undone!
+        </p>
+        <div class="buttons">
+            <button type="button" class="properties-button" id="confirm-<%= name %>-button">Confirm</button>
+            <button type="button" class="properties-button" id="cancel-<%= name %>-button">Cancel</button>
+        </div>
+    </div>
+</div>

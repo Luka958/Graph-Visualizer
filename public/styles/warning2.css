@@ -1,0 +1,26 @@
+#warning-2-div {
+    width: 25em;
+}
+#warning-2-div > .component-heading {
+    /*color: black;*/
+}
+#warning-2-div > .heading1-underline {
+    background-color: red;
+}
+#warning-2-grid {
+    background-color: #ebe8fc;
+    color: black;
+    position: relative;
+    min-height: 4em;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+
+
+}
+#warning-2-grid > img {
+    top: 50%;
+    width: 4em;
+    position: absolute;
+    right: 1.4em;
+    transform: translateY(-50%);
+}

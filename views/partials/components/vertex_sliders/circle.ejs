@@ -1,0 +1,12 @@
+<div id="hidden-slider-circle" class="hidden-slider" <% if (vertexSVG.shape !== 'circle') { %>hidden<% } %>>
+    <label for="circle-radius">Vertex radius</label><br>
+    <input type="range"
+           min="5"
+           max="50"
+           value="<%= vertexSVG.shape === 'circle' ? vertexSVG.r : vertexProps.circle.r %>"
+           class="slider"
+           id="circle-radius"
+           name="circle-radius"
+           data-default="<%= vertexProps.circle.r %>">
+    <span id="circle-radius-val" class="hidden-slider-val"></span><br><div class="height-setter-div"></div>
+</div>

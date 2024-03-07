@@ -1,0 +1,38 @@
+<script type="module" src="/scripts/helpers/graph/adjacency_matrix.js" defer></script>
+<link rel="stylesheet" href="styles/graph/matrix.css">
+
+<div id="adjacency-matrix" class="centered-div toolbar-properties">
+    <%- include(`../close`, {
+        id: 'close-adjacency-matrix',
+        container: 'adjacency-matrix'
+    }); %>
+    <div id="adjacency-matrix-heading" class="component-heading">Adjacency Matrix</div>
+    <div class="heading1-underline"></div>
+
+    <div id="adjacency-matrix-grid" class="content1 matrix-grid">
+        <label for="adjacency-matrix-size-input-m">|V| ∈ [0, 50]</label>
+        <br><br>
+        <input id="adjacency-matrix-size-input-m"
+               name="adjacency-matrix-size-input-m"
+               class="matrix-size-input"
+               type="number"
+               min="0"
+               max="50"
+               oninput="validity.valid||(value='');">
+        <table id="adjacency-matrix-table" class="matrix-table"></table>
+        <br>
+        <div class="buttons">
+            <button type="button" class="properties-button" id="insert-adjacency-matrix">Insert</button>
+            <button
+                    type="reset"
+                    class="properties-button"
+                    id="reset-adjacency-matrix"
+                    onclick="   // reset inputs in the matrix
+                    document
+                        .querySelectorAll('#adjacency-matrix-table input')
+                        .forEach(input => input.value = '');">
+                Reset
+            </button>
+        </div>
+    </div>
+</div>

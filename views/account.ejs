@@ -1,0 +1,84 @@
+<script type="text/javascript" src="/scripts/helpers/account.js" defer></script>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/common.css">
+<link rel="stylesheet" href="styles/account.css">
+<link rel="stylesheet" href="styles/properties.css">
+<title>Account</title>
+<link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+<body class="image-body">
+    <div class="central-head">
+        <%- include(`partials/components/logo`); %>
+    </div>
+
+    <% /** @property {string} user */ %>
+    <div id="account-container">
+
+        <form action="/account" method="post">
+            <span id="account-heading" class="heading" style="font-family: EncodeSans-Bold, serif">Account Settings</span>
+
+            <label class="first-name-label" for="account-input-1" id="account-label-1">First name</label>
+            <input class="first-name-input" id="account-input-1" type="text"
+                   name="first-name" value="<%= user['firstName'] %>" required>
+
+            <label class="last-name-label" for="account-input-2" id="account-label-2">Last name</label>
+            <input class="last-name-input" id="account-input-2" type="text"
+                   name="last-name" value="<%= user['lastName'] %>" required>
+
+            <label class="last-name-label" for="account-input-3" id="account-label-3">E-mail</label>
+            <input class="last-name-input" id="account-input-3" type="text"
+                   name="last-name" value="<%= user['email'] %>" disabled>
+
+            <label class="date-of-birth-label" for="account-input-4" id="account-label-4">Date of birth</label>
+            <input class="date-of-birth-input" id="account-input-4" type="date"
+                   name="date-of-birth" value="<%= user['dateOfBirth'] %>" required>
+
+            <label class="country-label" for="account-input-5" id="account-label-5">Country</label>
+            <input class="country-input" id="account-input-5" type="text"
+                   name="country" value="<%= user['country'] %>" required>
+
+            <label class="company-label" for="account-input-6" id="account-label-6">Company</label>
+            <input class="company-input" id="account-input-6" type="text"
+                   name="company" value="<%= user['company'] %>">
+
+            <label class="username-label" for="account-input-7"  id="account-label-7">Username</label>
+            <input class="username-input" id="account-input-7" type="text"
+                   name="username" value="<%= user['username'] %>" required>
+
+            <label class="password-label" for="account-input-8" id="account-label-8">Password</label>
+            <input class="password-input" id="account-input-8" type="password"
+                   name="password" value="<%= '' %>" required minlength="8">
+
+            <label class="confirm-password-label" for="account-input-9" id="account-label-9">
+                Enter password to confirm changes
+            </label>
+            <input class="confirm-password-input" id="account-input-9" type="password"
+                   name="confirm-password" placeholder="Password" required minlength="8">
+
+            <div class="buttons" id="account-buttons">
+                <button type="submit" class="properties-button" id="account-button">Apply</button>
+                <button type="reset" class="properties-button" id="close-account-button">Close</button>
+
+                <% if (user['role'] === 'admin') { %>
+                <button type="button" class="properties-button"
+                        id="go-to-admin-portal-button" onclick="location.replace('/admin_portal')">Portal
+                </button>
+                <% } %>
+            </div>
+            <% if (error !== null) { %>
+                <%- include(`partials/components/warning`); %>
+            <% } %>
+        </form>
+    </div>
+</body>
+
+<!-- set warning div width to the same value as account-container (width is not fixed) -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let containerWidth = document.querySelector('#account-container').clientWidth;
+        let warning = document.querySelector('.warning');
+        if (warning !== null) {
+            warning.style.width = containerWidth.toString();
+        }
+    });
+</script>

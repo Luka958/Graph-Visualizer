@@ -1,0 +1,68 @@
+<nav class="toolbar">
+
+    <div class="toolbar-container">
+        <label for="select-graph-type" id="select-graph-type-label">Graph Type</label>
+
+        <select name="select-graph-type" id="select-graph-type-1" class="selectors select-graph-type">
+            <option value="undirected">Undirected</option>
+            <option value="directed">Directed</option>
+        </select>
+        <select name="select-graph-type" id="select-graph-type-2" class="selectors select-graph-type">
+            <option value="unweighted">Unweighted</option>
+            <option value="weighted">Weighted</option>
+        </select>
+
+        <button type="button" class="toolbar-button" id="draw-vertex">Vertex</button>
+        <button type="button" class="toolbar-button" id="draw-edge">Edge</button>
+
+        <button type="submit" class="toolbar-button" id="import-canvas">Import</button>
+        <button type="button" class="toolbar-button" id="export-canvas">Export</button>
+
+        <img class="operation-img" id="operation-img-1" src="images/toolbar/dark/move.png" alt="move image">
+        <img class="operation-img" id="operation-img-2" src="images/toolbar/dark/rotate.png" alt="rotate image">
+        <img class="operation-img" id="operation-img-3" src="images/toolbar/dark/trash.png" alt="edit image">
+        <img class="operation-img" id="operation-img-4" src="images/toolbar/dark/delete.png" alt="trash image">
+
+        <img class="operation-img" id="operation-img-5" src="images/toolbar/dark/reverse.png" alt="reverse image">
+        <img class="operation-img" id="operation-img-6" src="images/toolbar/dark/weight.png" alt="weight image">
+        <img class="operation-img" id="operation-img-7" src="images/toolbar/dark/shrink.png" alt="shrink image">
+        <img class="operation-img" id="operation-img-8" src="images/toolbar/dark/expand.png" alt="expand image">
+
+        <img class="operation-img" id="operation-img-9" src="images/toolbar/dark/screenshot.png" alt="screenshot image">
+        <img class="operation-img" id="operation-img-10" src="images/toolbar/dark/pen.png" alt="pen image">
+        <img class="operation-img" id="operation-img-11" src="images/toolbar/dark/color.png" alt="color image">
+
+        <button type="button" class="toolbar-button" id="data">Data</button>
+        <button type="button" class="toolbar-button" id="graph">Graph</button>
+    </div>
+
+    <div id="home-footer">
+<!--        <div id="bug-report-img-container" class="footer-list-item-with-img home-footer-item">-->
+
+<!--            <img id="bug-report-img"-->
+<!--                 src="/images/footer/bug.png"-->
+<!--                 width="30px"-->
+<!--                 height="30px"-->
+<!--                 alt="icons8 image"-->
+<!--                 onclick="-->
+<!--                 <% if (user.role === 'admin') { %>-->
+<!--                    location.replace('/bug_reports');-->
+<!--                 <% } else { %>-->
+<!--                    document.querySelector(`#bug-report-div`).style.visibility = `visible`;-->
+<!--                 <% } %>-->
+<!--                 ">-->
+<!--            <span>Bug Report</span>-->
+<!--        </div>-->
+
+        <div class="footer-list-item-with-img home-footer-item">
+            <a href="https://icons8.com/">
+                <img src="/images/footer/icons8.png" width="30px" height="30px" alt="icons8 image">
+            </a>
+            <span>ICONS8</span>
+        </div>
+
+        <div class="footer-list-item-with-img home-footer-item">
+            <span>Copyright &copy; 2022-2023 All Rights Reserved</span>
+        </div>
+    </div>
+</nav>

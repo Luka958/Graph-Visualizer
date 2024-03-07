@@ -1,0 +1,48 @@
+<div id="screenshot-div" class="centered-div toolbar-properties">
+    <div id="screenshot-heading" class="component-heading">Screenshot</div>
+    <div class="heading1-underline"></div>
+
+    <div class="content1">
+
+        <div class="content2">
+            <label for="select-screenshot-format">Screenshot format:</label>
+            <select name="select-screenshot-format"
+                    id="select-screenshot-format"
+                    class="selectors"
+                    style="margin-bottom: -3px"
+            >
+                <option value="PNG" selected>PNG</option>
+                <option value="JPEG">JPEG</option>
+                <option value="BMP">BMP</option>
+                <option value="ICO">ICO</option>
+                <option value="WEBP">WEBP</option>
+                <option value="GIF">GIF</option>
+                <option value="PDF">PDF</option>
+            </select>
+        </div>
+        <div class="content2">
+            Dimensions:
+            <b><span id="screenshot-width"></span></b>
+            x
+            <b><span id="screenshot-height"></span></b>
+        </div>
+        <div class="content2">
+            Size:
+            <b><span id="screenshot-size"></span></b>
+            KB
+        </div>
+
+        <div class="buttons">
+            <button type="button" class="properties-button" id="download-screenshot-button">
+                <a id="export-screenshot-link" class="non-decorated-link">Download</a>
+            </button>
+            <button type="button" class="properties-button" id="cancel-screenshot-button">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    #select-screenshot-format option {
+        font-family: EncodeSans-Regular, serif;
+    }
+</style>

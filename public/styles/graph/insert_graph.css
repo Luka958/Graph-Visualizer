@@ -1,0 +1,52 @@
+#insert-graph-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    /* scroll settings */
+    overflow-y: scroll;
+    height: 385px;
+}
+
+.grid-item {
+    position: relative;
+}
+
+.grid-item > .component-heading {
+    height: 30px;
+    line-height: 30px;
+    font-size: 1em;
+}
+
+.grid-item-main {
+    position: relative;
+    border-top: 0.1em solid midnightblue;
+    border-right: 0.1em solid midnightblue;
+    border-left: 0.1em solid midnightblue;
+    background-color: white;
+}
+
+.special-mark {
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: midnightblue;
+    text-align: center;
+    color: white;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.forward-backward-img {
+    background-color: #fc8955;
+    border-radius: 5px;
+}
+.forward-backward-img:hover {
+    background-color: #fb5204;
+}
+.forward-backward-box {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

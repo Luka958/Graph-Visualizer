@@ -1,0 +1,78 @@
+.properties {
+    visibility: hidden;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: white;
+}
+
+.heading1-underline {
+    background-color: #fc8955;
+    height: 0.3em;
+    border-right: 0.1em solid midnightblue;
+    border-left: 0.1em solid midnightblue;
+}
+
+.content1 {
+    padding: 15px;
+    background-color: #ebe8fc;
+    border-right: 0.1em solid midnightblue;
+    border-left: 0.1em solid midnightblue;
+    border-bottom: 0.1em solid midnightblue;
+}
+
+.content1-no-wrap {
+    white-space: nowrap;
+}
+
+.properties-button {
+    background-color: #fc8955;
+    color: white;
+    font-family: EncodeSans-Regular, serif;
+    font-size: 1em;
+    height: 30px;
+    border: 0.2em solid #fc8955;
+    width: 90px;
+    border-radius: 15px;
+}
+
+.properties-button:hover {
+    border: 0.2em solid #fb5204;
+    background-color: #fb5204;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    justify-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    column-gap: 15px;
+
+}
+
+input[type="range"], input[type="radio"] {
+    accent-color: midnightblue;
+}
+
+.custom-br {
+    line-height: 10px;
+}
+
+.color-label-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.height-setter-div {
+    height: 10px;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}

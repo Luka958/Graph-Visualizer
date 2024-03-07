@@ -1,0 +1,104 @@
+<script type="text/javascript" src="scripts/helpers/canvas.js" defer></script>
+
+<div id="canvas-properties" class="properties">
+
+    <div class="component-heading"><label>Canvas Properties</label><br><br></div>
+    <%- include(`./components/close`, {
+        id: 'close-canvas',
+        container: 'canvas-properties'
+    }); %>
+    <div class="heading1-underline"></div>
+
+    <div class="content1">
+        <form action="/canvas" method="post">
+            <label>Canvas type</label><br><div class="height-setter-div"></div>
+            <fieldset id="canvas-type-fieldset">
+                <input type="radio" id="canvas-radio-solid" name="canvas-type-radio" value="solid"
+                        <%= canvasProps.canvasType === 'solid' ? 'checked' : undefined; %>>
+                <label for="canvas-radio-solid">Solid&nbsp;&nbsp;</label>
+
+                <input type="radio" id="canvas-radio-grid" name="canvas-type-radio" value="grid"
+                        <%= canvasProps.canvasType === 'grid' ? 'checked' : undefined; %>>
+                <label for="canvas-radio-grid">Grid</label><br><div class="height-setter-div"></div>
+            </fieldset>
+
+            <div class="show-if-grid" <%= canvasProps.canvasType === 'solid' ? 'hidden' : 'visible'; %>>
+                <label>Grid type</label><br><div class="height-setter-div"></div>
+                <fieldset id="grid-type-fieldset">
+                    <input type="radio" id="canvas-radio-single" name="grid-type-radio" value="single"
+                            <%= canvasProps.gridType === 'single' ? 'checked' : undefined; %>>
+                    <label for="canvas-radio-single">Single</label>
+
+                    <input type="radio" id="canvas-radio-double" name="grid-type-radio" value="double"
+                            <%= canvasProps.gridType === 'double' ? 'checked' : undefined; %>>
+                    <label for="canvas-radio-double">Double</label><br><div class="height-setter-div"></div>
+                </fieldset>
+            </div>
+
+            <div class="color-label-container">
+                <input type="color" id="canvas-background-color" value="#fc8955" class="color-picker"
+                       name="canvas-background-color">
+                <label for="canvas-background-color">&nbsp&nbsp Background color</label>
+            </div>
+            <div class="show-if-grid"
+                 style="display: <%= canvasProps.canvasType === 'solid' ? 'none' : 'initial'; %>">
+                <div class="color-label-container">
+                    <input type="color" id="canvas-grid-color" value="#ffffff" class="color-picker"
+                           name="canvas-grid-color">
+                    <label for="canvas-grid-color">&nbsp&nbsp Grid color</label>
+                </div>
+                <div class="height-setter-div"></div>
+                <!---------------------- SLIDER ---------------------->
+                <label for="canvas-thin-line-width">Thin line width</label><br>
+                <input type="range"
+                       min="<%= canvasProps.thin.min %>"
+                       max="<%= canvasProps.thin.max %>"
+                       step="<%= canvasProps.thin.step %>"
+                       value="<%= canvasProps.thin.value %>"
+                       class="slider"
+                       id="canvas-thin-line-width"
+                       name="canvas-thin-line-width"
+                       data-default="1">    <!-- custom HTML attribute for storing default value -->
+
+                <span id="canvas-thin-line-width-val"></span><br><div class="height-setter-div"></div>
+                <!---------------------------------------------------->
+                <!---------------------- SLIDER ---------------------->
+                <div class="show-if-double"
+                     style="display: <%= canvasProps.gridType === 'single' ? 'none' : 'initial'; %>">
+                    <label for="canvas-wide-line-width">Wide line width</label><br>
+                    <input type="range"
+                           min="<%= canvasProps.wide.min %>"
+                           max="<%= canvasProps.wide.max %>"
+                           step="<%= canvasProps.wide.step %>"
+                           value="<%= canvasProps.wide.value %>"
+                           class="slider"
+                           id="canvas-wide-line-width"
+                           name="canvas-wide-line-width"
+                           data-default="2.5">    <!-- custom HTML attribute for storing default value -->
+
+                    <span id="canvas-wide-line-width-val"></span><br>
+                </div>
+            </div><br>
+            <!---------------------------------------------------->
+            <%  // using $ and & in order to make an array of arrays
+            let items = "#canvas-thin-line-width" + "$" + "#canvas-thin-line-width-val"
+                    + "&" +
+                    "#canvas-wide-line-width" + "$" + "#canvas-wide-line-width-val"
+            %>
+            <div class="buttons">
+                <button type="button" class="properties-button" id="save-canvas">Save</button>
+                <button
+                        type="reset"
+                        class="properties-button"
+                        id="reset-canvas"
+                        onclick='sliderReset("<%= items %>")'>
+                    Reset
+                </button>
+            </div>
+        </form>
+        <!--      Server side data passed to frontend      -->
+        <% /** @property {string} canvasProps */ %>
+        <p id="canvasProps" hidden><%= JSON.stringify(canvasProps) %></p>
+        <!--------------------------------------------------->
+    </div>
+</div>

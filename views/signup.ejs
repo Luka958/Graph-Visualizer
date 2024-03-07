@@ -1,0 +1,95 @@
+<script type="text/javascript" src="/scripts/helpers/signup.js" defer></script>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/common.css">
+<link rel="stylesheet" href="styles/signup.css">
+<link rel="stylesheet" href="styles/properties.css">
+<title>Sign Up</title>
+<link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+<body class="image-body">
+    <div class="central-head">
+        <%- include(`partials/components/logo`); %>
+    </div>
+
+    <div id="sign-up-container">
+        <form action="/signup" method="post">
+            <span id="sign-up-heading" class="heading" style="font-family: EncodeSans-Bold, serif">Sign Up</span>
+
+            <label class="first-name-label" for="sign-up-input-1" id="sign-up-label-1">First name</label>
+            <input class="first-name-input" id="sign-up-input-1" type="text"
+                   name="first-name" placeholder="First name" required>
+
+            <label class="last-name-label" for="sign-up-input-2" id="sign-up-label-2">Last name</label>
+            <input class="last-name-input" id="sign-up-input-2" type="text"
+                   name="last-name" placeholder="Last name" required>
+
+            <label class="email-label" for="sign-up-input-3" id="sign-up-label-3">E-mail</label>
+            <input class="email-input" id="sign-up-input-3" type="email"
+                   name="email" placeholder="E-mail" required>
+
+            <label class="date-of-birth-label" for="sign-up-input-4" id="sign-up-label-4">Date of birth</label>
+            <input class="date-of-birth-input" id="sign-up-input-4" type="date"
+                   name="date-of-birth" required>
+
+            <label class="country-label" for="sign-up-input-5" id="sign-up-label-5">Country</label>
+            <input class="country-input" id="sign-up-input-5" type="text"
+                   name="country" placeholder="Country" required>
+
+            <label class="company-label" for="sign-up-input-6" id="sign-up-label-6">Company</label>
+            <input class="company-input" id="sign-up-input-6" type="text"
+                   name="company" placeholder="Company">
+
+            <label class="username-label" for="sign-up-input-7"  id="sign-up-label-7">Username</label>
+            <input class="username-input" id="sign-up-input-7" type="text"
+                   name="username" placeholder="Username" required>
+
+            <label class="password-label" for="sign-up-input-8" id="sign-up-label-8">Password</label>
+            <input class="password-input" id="sign-up-input-8" type="password"
+                   name="password" placeholder="Password" required minlength="8">
+
+            <label class="confirm-password-label" for="sign-up-input-9" id="sign-up-label-9">Confirm password</label>
+            <input class="confirm-password-input" id="sign-up-input-9" type="password"
+                   name="confirm-password" placeholder="Confirm password" required minlength="8">
+
+            <label class="check-box-label" id="sign-up-check-box-label">
+                <input class="check-box-input" type="checkbox" name="checkbox" required>
+                I agree all statements in <a id="terms-of-service-link" class="link" href="#">Terms of Service</a>
+            </label>
+
+            <div class="buttons" id="sign-up-buttons">
+                <button type="submit" class="properties-button" id="sign-up-button">Sign Up</button>
+                <button type="reset" class="properties-button" id="reset-sign-up-button"> Reset</button>
+            </div>
+
+            <div class="horizontal-line" id="sign-up-horizontal-line"><span class="or-separator">or</span></div>
+            <span class="familiar-services" id="sign-up-familiar-services">Sign up with familiar services</span>
+
+            <div class="services" id="sign-up-services">
+                <div class="fb-login-button"
+                     data-width=""
+                     data-size="medium"
+                     data-button-type="continue_with"
+                     data-layout="default"
+                     data-auto-logout-link="false"
+                     data-use-continue-as="false"
+                     data-onlogin="setAction()">
+                </div>
+            </div>
+
+            <span class="already-member">I'm already a member!
+                <a class="link" href="/login">Log In</a>
+            </span>
+            <% if (error !== null) { %>
+                <%- include(`partials/components/warning`); %>
+            <% } %>
+        </form>
+        <div id="terms-of-service-div" hidden><%- include(`partials/terms_of_service`); %></div>
+    </div>
+    <%- include(`partials/footer`); %>
+</body>
+
+<script>
+    let TOSLink = document.querySelector('#terms-of-service-link');
+    let TOSDiv = document.querySelector('#terms-of-service-div');
+    TOSLink.onclick = () => TOSDiv.hidden = (!TOSDiv.hidden);
+</script>

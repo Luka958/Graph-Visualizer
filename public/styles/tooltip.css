@@ -1,0 +1,83 @@
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted white;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: midnightblue;
+    color: white;
+    border: 2px solid white;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+}
+
+.tooltip-text-top {
+    width: 120px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px; /* half of the width */
+}
+
+.tooltip-text-right {
+    top: -5px;
+    left: 105%;
+}
+
+.tooltip-text-bottom {
+    width: 120px;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px; /* half of the width */
+}
+
+.tooltip-text-left {
+    top: -5px;
+    right: 105%;
+}
+
+.tooltip .tooltip-text::after {
+    content: " ";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+
+.tooltip .tooltip-text-bottom::after {
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+}
+
+.tooltip .tooltip-text-left::after {
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    rotate: 90deg;
+}
+
+.tooltip .tooltip-text-top::after {
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    rotate: 180deg;
+}
+
+.tooltip .tooltip-text-right::after {
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    rotate: 270deg;
+}

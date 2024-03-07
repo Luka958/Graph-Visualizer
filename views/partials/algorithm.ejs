@@ -1,0 +1,27 @@
+<script type="text/javascript" src="/scripts/algorithm.js" defer></script>
+<link rel="stylesheet" href="styles/algorithm.css">
+
+<div id="algorithm-div" class="centered-div properties">
+    <div id="algorithm-heading" class="component-heading">Algorithm
+        <%- include(`./components/close`, {
+            id: 'close-algorithm',
+            container: 'algorithm-div'
+        }); %>
+    </div>
+    <div class="heading1-underline"></div>
+
+    <div class="content1" id="algorithm-content">
+        <div class="flex-container">
+            <label id="search-algorithm-label">
+                <input id="search-algorithm-input" class="selectors" type="text" placeholder="Search..."
+                       spellcheck="false">
+            </label>
+            <span id="search-algorithm-span">
+                <img src="images/algorithm/search.png" width="20px" height="20px" id="search-algorithm-img">
+            </span>
+        </div>
+
+        <div id="algorithm-groups"></div>
+        <table id="selected-algorithms-table"></table>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div id="hidden-slider-triangle" class="hidden-slider" <% if (vertexSVG.shape !== 'triangle') { %>hidden<% } %>>
+    <label for="triangle-base">Triangle base</label><br>
+    <input type="range"
+           min="5"
+           max="50"
+           value="<%= vertexSVG.shape === 'triangle' ? vertexSVG['polygon-base'] : vertexProps.triangle.base %>"
+           class="slider"
+           id="triangle-base"
+           name="triangle-base"
+           data-default="<%= vertexProps.triangle.base %>">
+    <span id="triangle-base-val" class="hidden-slider-val"></span><br><div class="height-setter-div"></div>
+</div>

@@ -1,0 +1,61 @@
+<div id="edge-properties" class="properties">
+
+    <div class="component-heading"><label>Edge Properties</label><br><br></div>
+    <%- include(`./components/close`, {
+        id: 'close-edge',
+        container: 'edge-properties'
+    }); %>
+    <div class="heading1-underline"></div>
+
+    <div class="content1">
+        <form action="/edge" method="post">
+            <label for="select-edge-shape">Edge shape</label><br>
+            <select name="select-edge-shape" id="select-edge-shape" class="selectors">
+                <option value="Line">Line</option>
+<!--                <option value="Arrow">Arrow</option>-->
+            </select><br><div class="height-setter-div"></div>
+
+            <div class="color-label-container">
+                <input type="color" id="edge-border" value="<%= edgeSVG.stroke %>"
+                       class="color-picker" name="edge-border" data-default="<%= edgeProps.stroke %>">
+
+                <label for="edge-border">&nbsp;&nbsp; Edge border</label>
+            </div>
+            <div class="height-setter-div"></div>
+            <!---------------------- SLIDER ---------------------->
+            <label for="edge-width">Edge width</label><br>
+            <input type="range"
+                   min="1"
+                   max="10"
+                   value="<%= edgeSVG['stroke-width'] %>"
+                   class="slider"
+                   id="edge-width"
+                   name="edge-width"
+                   data-default="<%= edgeProps['stroke-width'] %>">
+
+            <span id="edge-width-val"></span>
+            <br><div class="height-setter-div"></div>
+            <!---------------------------------------------------->
+            <!---------------------- SLIDER ---------------------->
+            <label for="scale-loop">Scale loop</label><br>
+            <input type="range"
+                   min="0.1"
+                   max="1"
+                   step="0.01"
+                   value="<%= edgeSVG['scale-loop'] %>"
+                   class="slider"
+                   id="scale-loop"
+                   name="scale-loop"
+                   data-default="<%= edgeProps['scale-loop'] %>">
+
+            <span id="scale-loop-val"></span><br><br>
+            <!---------------------------------------------------->
+            <div class="buttons">
+                <button type="button" class="properties-button" id="save-edge">Save</button>
+                <button type="button" class="properties-button" id="reset-edge">Reset</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>

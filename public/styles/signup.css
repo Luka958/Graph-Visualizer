@@ -1,0 +1,74 @@
+#sign-up-container {
+    /* centering */
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    /*************/
+    display: flex;
+    border: 1px solid white;
+    padding: 20px 20px 0;
+    width: fit-content;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: midnightblue;
+}
+#sign-up-container > form {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 5px;
+    grid-column-gap: 50px;
+}
+#sign-up-container > form > * {
+    font-family: EncodeSans-Regular, serif;
+}
+#sign-up-container > form > input {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding-left: 7px;
+}
+#sign-up-container > form > input, #sign-up-container > form > label {
+    height: 32px;
+    line-height: 32px;
+}
+#sign-up-heading             { grid-area: 1 / 1 / span 1 / span 8 }
+#sign-up-label-1             { grid-area: 2 / 1 / span 1 / span 3 }
+#sign-up-input-1             { grid-area: 2 / 4 / span 1 / span 5 }
+#sign-up-label-2             { grid-area: 3 / 1 / span 1 / span 3 }
+#sign-up-input-2             { grid-area: 3 / 4 / span 1 / span 5 }
+#sign-up-label-3             { grid-area: 4 / 1 / span 1 / span 3 }
+#sign-up-input-3             { grid-area: 4 / 4 / span 1 / span 5 }
+#sign-up-label-4             { grid-area: 5 / 1 / span 1 / span 3 }
+#sign-up-input-4             { grid-area: 5 / 4 / span 1 / span 5 }
+#sign-up-label-5             { grid-area: 6 / 1 / span 1 / span 3 }
+#sign-up-input-5             { grid-area: 6 / 4 / span 1 / span 5 }
+#sign-up-label-6             { grid-area: 7 / 1 / span 1 / span 3 }
+#sign-up-input-6             { grid-area: 7 / 4 / span 1 / span 5 }
+#sign-up-label-7             { grid-area: 8 / 1 / span 1 / span 3 }
+#sign-up-input-7             { grid-area: 8 / 4 / span 1 / span 5 }
+#sign-up-label-8             { grid-area: 9 / 1 / span 1 / span 3 }
+#sign-up-input-8             { grid-area: 9 / 4 / span 1 / span 5 }
+#sign-up-label-9             { grid-area: 10 / 1 / span 1 / span 3 }
+#sign-up-input-9             { grid-area: 10 / 4 / span 1 / span 5 }
+#sign-up-check-box-label     { grid-area: 11 / 1 / span 1 / span 8 }
+#sign-up-buttons             { grid-area: 12/ 1 / span 1 / span 8 }
+#sign-up-horizontal-line     { grid-area: 13/ 1 / span 1 / span 8 }
+#sign-up-familiar-services   { grid-area: 14/ 1 / span 1 / span 8 }
+#sign-up-services            { grid-area: 15/ 1 / span 1 / span 8 }
+.already-member              { grid-area: 16/ 1 / span 1 / span 8 }
+.warning                     { grid-area: 17/ 1 / span 1 / span 8 }
+
+.already-member {
+    text-align: center;
+}
+
+/*********** terms of services ***********/
+#terms-of-service-div {
+    max-height: 550px;
+    max-width: 375px;
+    overflow-y: scroll;
+    padding-left: 20px;
+
+    white-space: pre-line;
+    font-size: 0.9em;
+}

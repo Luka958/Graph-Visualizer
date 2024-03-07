@@ -1,0 +1,57 @@
+<script type = "text/JavaScript" src = "https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+<script type="text/javascript" src="/scripts/helpers/admin_portal.js" defer></script>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/common.css">
+<link rel="stylesheet" href="styles/admin_portal.css">
+<link rel="stylesheet" href="styles/properties.css">
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.png">
+<title>Admin Portal</title>
+
+<body class="image-body">
+    <div class="central-head"><%- include(`partials/components/logo`); %></div>
+
+    <div id="admin-portal-container">
+        <form method="post">
+            <span id="admin-portal-heading" class="heading" style="font-family: EncodeSans-Bold, serif">Admin Portal</span>
+            <span id="admin-portal-span-1">Username</span>
+            <span id="admin-portal-span-2">E-mail</span>
+            <span id="admin-portal-span-3">Role</span>
+            <span id="admin-portal-span-4">Change Role</span>
+
+            <!-- server-side render -->
+            <% users.forEach((user, index) => { %>
+                <span data-index="row-index-<%= index %>"><%= user['username'] %></span>
+                <span data-index="row-index-<%= index %>"><%= user['email'] %></span>
+                <span data-index="row-index-<%= index %>"><%= user['role'] %></span>
+                <!-- data-active-option is custom HTML's attribute that will let us know which button is active -->
+                <!-- data-active-option = 'student' | 'teacher' | 'undefined' -->
+                <div id="group-<%= user['id'] %>"
+                     class="button-group"
+                     data-index="row-index-<%= index %>"
+                     data-active-option="undefined">
+                    <button id="student" type="button">Student</button>
+                    <button id="teacher" type="button">Teacher</button>
+                </div>
+            <% }); %>
+            <!------------------------>
+
+            <span class="not-registered" id="show-more">
+                <a class="link">Show more</a>
+            </span>
+            <span class="not-registered" id="show-less">
+                <a class="link">Show less</a>
+            </span>
+
+            <div class="buttons" id="admin-portal-buttons">
+                <% const obj = {x: 'bla', y: 5} %>
+                <button type="button" class="properties-button" id="apply-admin-portal-button">Apply</button>
+                <button type="button" class="properties-button" id="reset-admin-portal-button">Reset</button>
+                <button type="button" class="properties-button" id="exit-admin-portal-button"
+                    onclick="location.replace('/account')">Exit</button>
+
+                <button type="submit" id="post-form-button" hidden></button>
+            </div>
+        </form>
+    </div>
+</body>

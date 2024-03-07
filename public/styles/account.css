@@ -1,0 +1,53 @@
+#account-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 55%;
+    left: 50%;
+
+    display: flex;
+    border: 1px solid white;
+    padding: 20px 20px 0;
+    width: fit-content;
+    margin-top: -22px;
+    background-color: midnightblue;
+}
+#account-container > form {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 5px;
+    grid-column-gap: 50px;
+}
+#account-container > form > * {
+    font-family: EncodeSans-Regular, serif;
+}
+#account-container > form > input {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding-left: 7px;
+}
+#account-container > form > input, #account-container > form > label {
+    height: 32px;
+    line-height: 32px;
+}
+#account-heading             { grid-area: 1 / 1 / span 1 / span 8 }
+#account-label-1             { grid-area: 2 / 1 / span 1 / span 3 }
+#account-input-1             { grid-area: 2 / 4 / span 1 / span 5 }
+#account-label-2             { grid-area: 3 / 1 / span 1 / span 3 }
+#account-input-2             { grid-area: 3 / 4 / span 1 / span 5 }
+#account-label-3             { grid-area: 4 / 1 / span 1 / span 3 }
+#account-input-3             { grid-area: 4 / 4 / span 1 / span 5 }
+#account-label-4             { grid-area: 5 / 1 / span 1 / span 3 }
+#account-input-4             { grid-area: 5 / 4 / span 1 / span 5 }
+#account-label-5             { grid-area: 6 / 1 / span 1 / span 3 }
+#account-input-5             { grid-area: 6 / 4 / span 1 / span 5 }
+#account-label-6             { grid-area: 7 / 1 / span 1 / span 3 }
+#account-input-6             { grid-area: 7 / 4 / span 1 / span 5 }
+#account-label-7             { grid-area: 8 / 1 / span 1 / span 3 }
+#account-input-7             { grid-area: 8 / 4 / span 1 / span 5 }
+#account-label-8             { grid-area: 9 / 1 / span 1 / span 3 }
+#account-input-8             { grid-area: 9 / 4 / span 1 / span 5 }
+#account-label-9             { grid-area: 10 / 1 / span 1 / span 8; text-align: center }
+#account-input-9             { grid-area:11 / 2 / span 1 / span 6; text-align: center; margin-bottom: 1em }
+#account-buttons             { grid-area:12 / 1 / span 1 / span 8 }
+.warning                     { grid-area:13 / 1 / span 1 / span 8 }

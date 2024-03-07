@@ -1,0 +1,25 @@
+<div id="hidden-slider-polygon-1" class="hidden-slider" <% if (vertexSVG.shape !== 'polygon') { %>hidden<% } %>>
+    <label for="polygon-base">Polygon base</label><br>
+    <input type="range"
+           min="5"
+           max="50"
+           value="<%= vertexSVG.shape === 'polygon' ? vertexSVG['polygon-base'] : vertexProps.polygon.base %>"
+           class="slider"
+           id="polygon-base"
+           name="polygon-base"
+           data-default="<%= vertexProps.polygon.base %>">
+    <span id="polygon-base-val" class="hidden-slider-val"></span><br><div class="height-setter-div"></div>
+</div>
+
+<div id="hidden-slider-polygon-2" class="hidden-slider" <% if (vertexSVG.shape !== 'polygon') { %>hidden<% } %>>
+    <label for="number-of-angles">Number of angles</label><br>
+    <input type="range"
+           min="3"
+           max="50"
+           value="<%= vertexSVG.shape === 'polygon' ? vertexSVG['number-of-angles'] : vertexProps.polygon.angles %>"
+           class="slider"
+           id="number-of-angles"
+           name="number-of-angles"
+           data-default="<%= vertexProps.polygon.angles %>">
+    <span id="number-of-angles-val" class="hidden-slider-val"></span><br><div class="height-setter-div"></div>
+</div>

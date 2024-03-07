@@ -1,0 +1,63 @@
+<script type="module" src="/scripts/helpers/color.js" defer></script>
+
+<gv-floating-toolbar collapsed="false" id="color-toolbar" class="hidden">
+    <div slot="content" class="color-toolbar-content horizontal-flex" style="column-gap: 0.5em;">
+        <div>
+            <gv-color-palette id="color-toolbar-color-palette"></gv-color-palette>
+        </div>
+        <div id="color-toolset-1" class="vertical-flex">
+            <div>
+                <label for="color-toolbar-select">Coloring: </label>
+                <select id="color-toolbar-select" name="color-toolbar-select" class="selectors">
+                    <option value="vertex" id="vertex-coloring-option" selected>Vertex</option>
+                    <option value="edge" id="edge-coloring-option">Edge</option>
+                    <option value="face" id="face-coloring-option">Face</option>
+                </select>
+            </div>
+        </div>
+        <div id="color-toolset-2" class="horizontal-flex">
+            <img class="sketch-tool-img" id="color-tool-brush" src="images/sketch/brush.png" alt="brush icon">
+            <img class="sketch-tool-img" id="color-tool-eraser" src="images/sketch/eraser.png" alt="eraser icon">
+        </div>
+        <div id="color-toolset-3" class="vertical-flex">
+            <input type="checkbox" id="save-color-state" checked>
+            <label for="save-color-state" style="font-size: 12px">Save State</label>
+        </div>
+        <div id="color-toolset-4" class="horizontal-flex">
+            <img class="sketch-tool-img" id="color-tool-exit" src="images/sketch/exit.png" alt="exit icon">
+        </div>
+    </div>
+</gv-floating-toolbar>
+
+<style>
+    #color-toolset-1, #color-toolset-2, #color-toolset-3, #color-toolset-4 {
+        align-items: center;
+    }
+
+    #color-toolset-1 {
+        white-space: nowrap;
+        justify-content: center;
+    }
+
+    #color-toolset-2 {
+        padding-left: 0.5em;
+        border-left: 1px solid white;
+        justify-content: center;
+    }
+
+    #color-toolset-3 {
+        width: 4.25em;
+        padding-left: 0.5em;
+        border-left: 1px solid white;
+        justify-content: center;
+    }
+
+    #color-toolset-4 {
+        border-left: 1px solid white;
+        padding-left: 0.5em;
+    }
+
+    #save-color-state {
+        accent-color: #fc8955;
+    }
+</style>

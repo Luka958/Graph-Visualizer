@@ -1,0 +1,59 @@
+#log-in-container {
+    /* centering */
+    /* log-in position is absolute (instead of the relative, like sign-up)
+       because it is smaller and can fit between header and footer while
+       sing-up would be overlapped by the footer
+    */
+    position: absolute;
+    transform: translate(-50%, -55%);
+    left: 50%;
+    top: 50%;
+    /*************/
+    display: flex;
+    border: 1px solid white;
+    padding: 20px 20px 0;
+    width: fit-content;
+    background-color: midnightblue;
+}
+
+#log-in-container > form {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 5px;
+    grid-column-gap: 50px;
+}
+#log-in-container > form > * {
+    font-family: EncodeSans-Regular, serif;
+}
+#log-in-container > form > input {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding-left: 7px;
+}
+#log-in-container > form > input, #log-in-container > form > label {
+    height: 32px;
+    line-height: 32px;
+}
+
+.log-in-sign-up-head {
+    background-color: midnightblue;
+    height: 50px;
+}
+
+#log-in-heading           { grid-area:  1 / 1 / span 1 / span 8 }
+#log-in-label-1           { grid-area:  2 / 1 / span 1 / span 3 }
+#log-in-input-1           { grid-area:  2 / 4 / span 1 / span 5 }
+#log-in-label-2           { grid-area:  3 / 1 / span 1 / span 3 }
+#log-in-input-2           { grid-area:  3 / 4 / span 1 / span 5 }
+#log-in-check-box-label   { grid-area:  5 / 1 / span 1 / span 8 }
+#log-in-buttons           { grid-area:  6 / 1 / span 1 / span 8 }
+#log-in-horizontal-line   { grid-area:  7 / 1 / span 1 / span 8 }
+#log-in-familiar-services { grid-area:  8 / 1 / span 1 / span 8 }
+#log-in-services          { grid-area:  9 / 1 / span 1 / span 8 }
+.not-registered           { grid-area: 10 / 1 / span 1 / span 8 }
+.warning                  { grid-area: 11 / 1 / span 1 / span 8 }
+
+.not-registered {
+    text-align: center;
+}

@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/common.css">
+<link rel="stylesheet" href="styles/login.css">
+<link rel="stylesheet" href="styles/properties.css">
+<title>Log In</title>
+<link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+<body class="image-body">
+    <div class="central-head">
+        <%- include(`partials/components/logo`); %>
+    </div>
+
+    <div id="log-in-container">
+        <form action="/login" method="post">
+            <span id="log-in-heading" class="heading" style="font-family: EncodeSans-Bold, serif">Log In</span>
+
+            <label class="username-label" for="log-in-input-1" id="log-in-label-1">Username</label>
+            <input class="username-input" id="log-in-input-1" name="username" type="text"
+                   placeholder="Username" spellcheck="false">
+
+            <label class="password-label" for="log-in-input-2" id="log-in-label-2">Password</label>
+            <input class="password-input" id="log-in-input-2" name="password" type="password" placeholder="Password"
+                   spellcheck="false">
+
+<!--            <label class="check-box-label" id="log-in-check-box-label">-->
+<!--                <input class="check-box-input" type="checkbox" name="remember-me">-->
+<!--                Remember me-->
+<!--            </label>-->
+
+            <div class="horizontal-line" id="log-in-horizontal-line"><span class="or-separator">or</span></div>
+            <span class="familiar-services" id="log-in-familiar-services">Log in with familiar services</span>
+
+            <div class="services" id="log-in-services">
+                <div class="fb-login-button"
+                     data-width=""
+                     data-size="medium"
+                     data-button-type="continue_with"
+                     data-layout="default"
+                     data-auto-logout-link="false"
+                     data-use-continue-as="false"
+                     data-onlogin="setAction();">
+                </div>
+            </div>
+
+            <div class="buttons" id="log-in-buttons">
+                <button type="submit" class="properties-button" id="log-in-button">Log In</button>
+                <button type="reset" class="properties-button" id="reset-log-in-button">Reset</button>
+            </div>
+
+            <span class="not-registered">Haven't registered yet?
+                <a class="link" href="/signup">Sign Up</a>
+            </span>
+            <% if (error !== null) { %>
+                <%- include(`partials/components/warning`); %>
+            <% } %>
+        </form>
+    </div>
+    <%- include(`partials/footer`); %>
+</body>

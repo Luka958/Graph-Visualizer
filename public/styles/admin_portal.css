@@ -1,0 +1,47 @@
+#admin-portal-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    border: 1px solid white;
+    padding: 20px 20px 0;
+    width: fit-content;
+    background-color: midnightblue;
+}
+#admin-portal-container > form {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 5px;
+    grid-column-gap: 50px;
+}
+.button-group button {
+    font-family: inherit;
+    background-color: #fc8955;
+    border: 1px solid white;
+    color: white;
+}
+.button-group button:hover {
+    background-color: #fb5204;
+}
+#student {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#teacher {
+    margin-left: -5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#admin-portal-buttons {
+    margin-top: 10px;
+}
+.not-registered {
+    text-align: center;
+    cursor: pointer;
+}
+#admin-portal-heading { grid-area: 1 / 1 / span 1 / span 4 }
+#admin-portal-span-1  { grid-area: 2 / 1 / span 1 / span 1; text-align: center; }
+#admin-portal-span-2  { grid-area: 2 / 2 / span 1 / span 1; text-align: center; }
+#admin-portal-span-3  { grid-area: 2 / 3 / span 1 / span 1; text-align: center; }
+#admin-portal-span-4  { grid-area: 2 / 4 / span 1 / span 1; text-align: center; }

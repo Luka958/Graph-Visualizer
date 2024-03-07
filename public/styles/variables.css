@@ -1,0 +1,9 @@
+/* all main colors are defined here, use: var(--primary_dark); */
+:root {
+    --primary_dark: midnightblue;
+    --primary_light: #ebe8fc;
+
+    --secondary_dark: #fc8955;
+    --secondary_dark_hover: #fb5204;
+    --secondary_light: #fedbcd;
+}

@@ -1,0 +1,65 @@
+/**************** contains styles that are common to login, signup and account ****************/
+@font-face {
+    font-family: EncodeSans-Bold;
+    src: url("../fonts/EncodeSans/EncodeSans-Bold.ttf");
+}
+@font-face {
+    font-family: EncodeSans-Regular;
+    src: url("../fonts/EncodeSans/EncodeSans-Regular.ttf");
+}
+
+body {
+    margin: 0;
+}
+/* overriding main.css */
+#logo-img {
+    transform: translate(-50%, 0);
+    top: 0;
+    left: 47.8%;
+}
+/***********************/
+
+.check-box-input {
+    accent-color: #fc8955;
+}
+.check-box-label {
+    text-align: center;
+    font-size: 0.85em;
+}
+
+.or-separator {
+    display: flex;
+    flex-direction: row;
+}
+.or-separator:before, .or-separator:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+}
+.or-separator:before {
+    margin-right: 10px
+}
+.or-separator:after {
+    margin-left: 10px
+}
+
+.familiar-services, .horizontal-line {
+    text-align: center;
+    font-size: 0.85em;
+}
+.services {
+    display: flex;
+    justify-content: center;
+}
+
+.link, .link:hover, .link:visited, .link:active {
+    color: #fc8955;
+    text-decoration: none;
+}
+
+.heading {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 1.2em;
+}
