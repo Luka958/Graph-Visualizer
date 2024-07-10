@@ -4,6 +4,8 @@ node_modules/
 gv.db
 sessions.db
 
+.idea/**
+
 # Webstorm
 
 # Created by https://www.toptal.com/developers/gitignore/api/webstorm

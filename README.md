@@ -3,6 +3,9 @@
 ## Setup for non-technical Windows users
 Navigate to the `windows` directory, right-click on each `.bat` file, and select `Send to` > `Desktop` to create shortcuts on the desktop.
 
+## Environment
+```NODE_VERSION=20.11.1``` 
+
 ## Setup
 Run the following commands:
 1. install dependencies ```npm install```
