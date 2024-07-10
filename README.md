@@ -1,7 +1,7 @@
 # Graph Visualizer
 
-## Setup for non-technical Windows users
-Navigate to the `windows` directory, right-click on each `.bat` file, and select `Send to` > `Desktop` to create shortcuts on the desktop.
+## Deployment
+[Render](https://graph-visualizer-iu9l.onrender.com/)
 
 ## Environment
 ```NODE_VERSION=20.11.1``` 
