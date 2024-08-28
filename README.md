@@ -21,5 +21,5 @@ The following changes were applied to achieve easier setup:
 ## Usage
 Going through a registration process is boring if you want to test the application quickly. Therefore, you can use the default, i.e., the admin user with the following credentials:
 - username: `admin`
-- password: `admim`
+- password: `admin`
 
